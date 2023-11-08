@@ -1,0 +1,38 @@
+.sale-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(161, 226, 235, 1);
+    color: white;
+  }
+  
+  .sale-content {
+    
+    padding: 50px;
+    flex-basis: 56%;
+  }
+
+  
+  .sale-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 80px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 63px;
+    font-weight: 700;
+  }
+
+  .sale-button {
+    padding: 25px 50px;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 700;
+  }

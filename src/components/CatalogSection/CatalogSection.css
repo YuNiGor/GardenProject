@@ -1,0 +1,23 @@
+.catalog-section {
+    margin: 20px 0;
+  }
+  
+  .all-categories-button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .category-card {
+    padding: 20px;
+  }
+  
+  .category-card img {
+    max-height: 318px;
+  }
+  
+  .category-card h3 {
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
