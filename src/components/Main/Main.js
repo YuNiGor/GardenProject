@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Main.css';
 import saleImage from '../../assets/sale_new_season.png';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import CatalogSection from '../../components/CatalogSection/CatalogSection';
 
+function Main({ catalogRef }) {
+  const location = useLocation();
 
-function Main() {
+  useEffect(() => {
+    // Проверяем состояние маршрутизации, чтобы определить, нужно ли прокручивать до каталога
+    if (location.state?.scrollToCatalog && catalogRef.current) {
+      catalogRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location, catalogRef]);
+
   return (
     <main className="main-container">
       <section className="sale-section">
@@ -23,7 +30,9 @@ function Main() {
         </div>
       </section>
 
-      <CatalogSection />
+      <div ref={catalogRef}>
+        <CatalogSection />
+      </div>
 
       <section className="discount-section">
 

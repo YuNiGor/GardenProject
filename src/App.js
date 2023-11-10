@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Header from './components/Header/index.js';
+import Header from './components/Header';
 import Footer from './components/Footer/index.js';
 import AllProducts from './components/AllProducts/AllProducts.js';
 import Cart from './components/Cart/Cart.js';
@@ -14,15 +13,17 @@ import SingleProduct from './components/SingleProduct/SingleProduct.js';
 import './App.css';
 
 function App() {
+  const catalogRef = useRef(null);
+
   return (
     <div className="global-container">
       <Router>
-        <Header />
+        <Header catalogRef={catalogRef} />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main catalogRef={catalogRef} />} />
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/Categories" element={<Categories />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/DiscountedProducts" element={<DiscountedProducts />} />
           <Route path="/ProductCategory" element={<ProductCategory />} />
           <Route path="/SingleProduct/:id" element={<SingleProduct />} />
@@ -35,7 +36,5 @@ function App() {
 }
 
 export default App;
-
-
 
 
