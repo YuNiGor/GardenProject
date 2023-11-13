@@ -1,0 +1,45 @@
+.catalogSection {
+  margin: auto;
+}
+
+.catalogHeader {
+  display: flex;
+  align-items: center;
+}
+
+.allCategoriesBtn {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-left: 100px;
+  color: #8B8B8B;
+  background: #FFFFFF;
+  border: 2px solid #8B8B8B;
+  cursor: pointer;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.categoryCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+
+.categoryCard {
+  text-align: center;
+  cursor: pointer;
+}
+
+.categoryCard img {
+  width: 100%;
+  height: 416px;
+  object-fit: cover;
+}
+
+.categoryTitle {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}

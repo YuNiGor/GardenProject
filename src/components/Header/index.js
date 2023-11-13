@@ -7,11 +7,9 @@ function Header({ catalogRef }) {
   const navigate = useNavigate();
 
   const handleCatalogClick = () => {
-    // Если мы уже на главной странице, просто прокручиваем до каталога
     if (window.location.pathname === '/') {
       catalogRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Иначе, переходим на главную страницу и прокручиваем до каталога
       navigate('/', { state: { scrollToCatalog: true } });
     }
   };

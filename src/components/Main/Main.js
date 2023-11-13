@@ -3,13 +3,14 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Main.css';
 import saleImage from '../../assets/sale_new_season.png';
-import CatalogSection from '../../components/CatalogSection/CatalogSection';
+import CatalogSection from '../CatalogSection/CatalogSection';
+import DiscountSection from '../DiscountSection/DiscountSection';
+import SaleSection from '../SaleSection/SaleSection'
 
 function Main({ catalogRef }) {
   const location = useLocation();
 
   useEffect(() => {
-    // Проверяем состояние маршрутизации, чтобы определить, нужно ли прокручивать до каталога
     if (location.state?.scrollToCatalog && catalogRef.current) {
       catalogRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -34,17 +35,13 @@ function Main({ catalogRef }) {
         <CatalogSection />
       </div>
 
-      <section className="discount-section">
+      <div>
+        <DiscountSection />
+      </div>
 
-        <h2>5% off on the first order</h2>
-        <button>Get a discount</button>
-      </section>
-
-      <section className="featured-products-section">
-
-        <h2>Sale</h2>
-
-      </section>
+      <div>
+        <SaleSection />
+      </div>
     </main>
   );
 }
