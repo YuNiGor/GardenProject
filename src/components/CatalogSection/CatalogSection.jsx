@@ -5,26 +5,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./CatalogSection.module.css";
 import { settings } from "../../utils/settings";
-
-const fetchAllCategories = async () => {
-  try {
-    const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/categories/all`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching categories:', error);
-  }
-};
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCategories } from "../../redux/store/slice/cotegoriesSlice";
 
 function CatalogSection() {
-  const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
+  const { categoriesList } = useSelector((state) => state.categories);
   const [isSwiping, setIsSwiping] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchAllCategories().then((data) => setCategories(data));
+    dispatch(getAllCategories());
   }, []);
 
   const handleCategoryClick = (e, categoryId) => {
@@ -38,7 +29,7 @@ function CatalogSection() {
   const updatedSettings = {
     ...settings,
     beforeChange: () => setIsSwiping(true),
-    afterChange: () => setIsSwiping(false)
+    afterChange: () => setIsSwiping(false),
   };
 
   return (
@@ -51,8 +42,12 @@ function CatalogSection() {
       </div>
       <div className={styles.categoryCardsContainer}>
         <Slider {...updatedSettings}>
-          {categories.map((category) => (
-            <div key={category.id} className={styles.categoryCard} onClick={(e) => handleCategoryClick(e, category.id)}>
+          {categoriesList.map((category) => (
+            <div
+              key={category.id}
+              className={styles.categoryCard}
+              onClick={(e) => handleCategoryClick(e, category.id)}
+            >
               <img
                 src={`${process.env.REACT_APP_API_URL}${category.image}`}
                 alt={category.title}
