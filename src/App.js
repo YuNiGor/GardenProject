@@ -1,15 +1,15 @@
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer/index.js';
-import AllProducts from './components/AllProducts/AllProducts.js';
-import Cart from './components/Cart/Cart.js';
-import Categories from './components/Categories/Categories.js';
-import DiscountedProducts from './components/DiscountedProducts/DiscountedProducts.js';
-import Main from './components/Main/Main.js';
-import NotFound from './components/NotFound/NotFound.js';
-import ProductCategory from './components/ProductCategory/ProductCategory.js';
-import SingleProduct from './components/SingleProduct/SingleProduct.js';
+import Footer from './components/Footer';
+import AllProducts from './components/AllProducts/AllProducts';
+import ProductCard from './components/ProductCard/ProductCard';
+import Categories from './components/Categories/Categories';
+import DiscountedProducts from './components/DiscountedProducts/DiscountedProducts';
+import Main from './components/Main/Main';
+import NotFound from './components/NotFound/NotFound';
+import ProductCategory from './components/ProductCategory/ProductCategory';
+import SingleProduct from './components/SingleProduct/SingleProduct';
 import './App.css';
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Main catalogRef={catalogRef} />} />
           <Route path="/all-products" element={<AllProducts />} />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/product-card" element={<ProductCard />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/DiscountedProducts" element={<DiscountedProducts />} />
-          <Route path="/ProductCategory" element={<ProductCategory />} />
-          <Route path="/SingleProduct/:id" element={<SingleProduct />} />
+          <Route path="/discounted-products" element={<DiscountedProducts />} />
+          <Route path="/categories/:categoryId" element={<ProductCategory />} />
+          <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

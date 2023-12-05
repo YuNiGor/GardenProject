@@ -2,22 +2,31 @@ import React, { useState, useEffect } from 'react';
 import styles from './SaleSection.module.css';
 
 function getRandomItems(arr, num) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, num);
+  const result = new Set();
+  while(result.size < num) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    result.add(arr[randomIndex]);
+  }
+  return [...result];
 }
 
 function SaleSection() {
   const [saleItems, setSaleItems] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/products/all`)
-      .then(response => response.json())
-      .then(data => {
+    const fetchSaleItems = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/products/all`);
+        const data = await response.json();
         const discountedProducts = data.filter(item => item.discont_price && item.price && item.discont_price < item.price);
         const randomDiscountedProducts = getRandomItems(discountedProducts, 3);
         setSaleItems(randomDiscountedProducts);
-      })
-      .catch(error => console.error('Error fetching sale items:', error));
+      } catch (error) {
+        console.error('Error fetching sale items:', error);
+      }
+    };
+
+    fetchSaleItems();
   }, []);
 
   return (

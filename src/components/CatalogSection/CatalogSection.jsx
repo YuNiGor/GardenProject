@@ -16,7 +16,7 @@ function CatalogSection() {
 
   useEffect(() => {
     dispatch(getAllCategories());
-  }, []);
+  }, [dispatch]);
 
   const handleCategoryClick = (e, categoryId) => {
     if (isSwiping) {
