@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ProductCard from '../ProductCard/ProductCard';
 import styles from './SaleSection.module.css';
 
 function getRandomItems(arr, num) {
@@ -34,15 +35,7 @@ function SaleSection() {
       <h2 className={styles.title}>Sale</h2>
       <div className={styles.itemsContainer}>
         {saleItems.map(item => (
-          <div key={item.id} className={styles.item}>
-            <img src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.title} className={styles.image} />
-            <div className={styles.info}>
-              <span className={styles.newPrice}>${item.discont_price}</span>
-              <span className={styles.oldPrice}>${item.price}</span>
-              <span className={styles.discount}>{((1 - item.discont_price / item.price) * 100).toFixed(0)}% off</span>
-            </div>
-            <p className={styles.description}>{item.title}</p>
-          </div>
+          <ProductCard key={item.id} product={item} />
         ))}
       </div>
     </div>

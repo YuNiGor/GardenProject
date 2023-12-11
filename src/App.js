@@ -26,7 +26,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/discounted-products" element={<DiscountedProducts />} />
           <Route path="/categories/:categoryId" element={<ProductCategory />} />
-          <Route path="/single-product/:id" element={<SingleProduct />} />
+          <Route path="/products/:productId" element={<SingleProduct />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
