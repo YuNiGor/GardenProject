@@ -1,0 +1,47 @@
+.cartItems {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.itemDetails {
+  flex-grow: 1;
+}
+
+.itemImage {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.itemTitle {
+  font-weight: bold;
+}
+
+.itemPrice {
+  margin: 0 10px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity input {
+  width: 50px;
+  text-align: center;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}

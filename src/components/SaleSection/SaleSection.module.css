@@ -1,0 +1,16 @@
+.saleSection {
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.itemsContainer {
+  display: flex;
+}
+

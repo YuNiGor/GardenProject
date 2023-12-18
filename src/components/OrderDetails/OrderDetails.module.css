@@ -1,0 +1,33 @@
+.orderDetails {
+  width: 35%;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.orderDetails h2 {
+  text-align: center;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.finalTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.orderButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}

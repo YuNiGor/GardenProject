@@ -1,0 +1,30 @@
+.cartContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.shoppingCart {
+  width: 60%;
+}
+
+.backToStore {
+  margin-bottom: 20px;
+}
+
+.backToStoreLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cartContainer {
+    flex-direction: column;
+  }
+
+  .shoppingCart,
+  .orderDetails {
+    width: 100%;
+  }
+}
