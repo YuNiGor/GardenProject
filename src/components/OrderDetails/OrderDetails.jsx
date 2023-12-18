@@ -1,4 +1,3 @@
-// src/components/OrderDetails/OrderDetails.jsx
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../../contexts/CartContext';
 import styles from './OrderDetails.module.css';
@@ -10,7 +9,6 @@ const OrderDetails = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Проверка, была ли применена скидка
     const discountApplied = localStorage.getItem('discountApplied') === 'true';
     setIsDiscountApplied(discountApplied);
   }, []);
@@ -30,7 +28,6 @@ const OrderDetails = () => {
       return;
     }
     setError('');
-    // Логика оформления заказа
     alert('Order placed successfully!');
   };
 
