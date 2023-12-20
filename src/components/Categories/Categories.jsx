@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllCategories } from '../../redux/store/slice/cotegoriesSlice';
+import { getAllCategories } from '../../redux/store/slice/categoriesSlice';
 import { Link } from 'react-router-dom';
 import styles from './Categories.module.css';
 

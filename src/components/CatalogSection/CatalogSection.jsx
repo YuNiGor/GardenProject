@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./CatalogSection.module.css";
 import { settings } from "../../utils/settings";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from "../../redux/store/slice/cotegoriesSlice";
+import { getAllCategories } from "../../redux/store/slice/categoriesSlice";
 
 function CatalogSection() {
   const dispatch = useDispatch();
