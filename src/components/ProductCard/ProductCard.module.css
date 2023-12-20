@@ -25,13 +25,13 @@
     padding: 10px;
   }
   
-  .priceSection {
+  .productPrice {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
   }
   
-  .discountPrice {
+  .discountedPrice {
     font-weight: bold;
     color: red;
   }
@@ -41,7 +41,7 @@
   }
   
 .addToCartButton {
-  position: absolute;
+  position:relative;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);

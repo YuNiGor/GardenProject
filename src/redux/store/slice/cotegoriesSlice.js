@@ -2,13 +2,16 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getAllCategories = createAsyncThunk(
   "categories/getAllCategories",
-  async () => {
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:3333/categories/all");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/categories/all`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       const data = await response.json();
       return data;
     } catch (error) {
-      console.log(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -18,6 +21,7 @@ export const categoriesSlice = createSlice({
   initialState: {
     categoriesList: [],
     status: null,
+    error: null,
   },
   extraReducers: (builder) => {
     builder
@@ -27,6 +31,10 @@ export const categoriesSlice = createSlice({
       .addCase(getAllCategories.fulfilled, (state, action) => {
         state.status = "done";
         state.categoriesList = action.payload;
+      })
+      .addCase(getAllCategories.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
       });
   },
 });

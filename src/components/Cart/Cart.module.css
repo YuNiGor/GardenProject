@@ -1,7 +1,7 @@
 .cartContainer {
   display: flex;
+  padding: 40px;
   justify-content: space-between;
-  margin: 40px;
 }
 
 .shoppingCart {
@@ -9,13 +9,12 @@
 }
 
 .backToStore {
+  display: block;
   margin-bottom: 20px;
-}
-
-.backToStoreLink {
-  text-decoration: none;
   color: #000;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
@@ -26,5 +25,10 @@
   .shoppingCart,
   .orderDetails {
     width: 100%;
+  }
+
+  .orderDetails {
+    margin-left: 0;
+    margin-top: 32px;
   }
 }

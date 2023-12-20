@@ -1,47 +1,48 @@
-.cartItems {
-  list-style: none;
-  padding: 0;
-}
-
 .cartItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
+  padding: 16px;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.itemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 16px;
 }
 
 .itemDetails {
   flex-grow: 1;
 }
 
-.itemImage {
-  width: 100px;
-  margin-right: 20px;
-}
-
 .itemTitle {
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .itemPrice {
-  margin: 0 10px;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
 }
 
 .quantity {
   display: flex;
   align-items: center;
+  margin-right: 16px;
 }
 
 .quantity input {
   width: 50px;
-  text-align: center;
+  margin: 0 8px;
 }
 
 .removeButton {
-  background: none;
-  border: none;
-  cursor: pointer;
+  font-size: 24px;
   color: #999;
+  cursor: pointer;
+  border: none;
+  background: none;
 }

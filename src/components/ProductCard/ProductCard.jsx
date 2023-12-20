@@ -23,8 +23,8 @@ function ProductCard({ product }) {
         <AddToCartButton product={product} />
       )}
       <div className={styles.productInfo}>
-        <h3 className={styles.productTitle}>{product.title}</h3>
         <p className={styles.productPrice}>
+        <h3 className={styles.productTitle}>{product.title}</h3>
           {product.discont_price ? (
             <>
               <span className={styles.discountedPrice}>${product.discont_price}</span>
